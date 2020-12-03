@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <title>CGPA CALCULATOR</title>
+    </head>
+    <body>
+        <h1>GPA CALCULATOR</h1>
+        <form id="myForm" action="#">
+            <div>
+                <label>Subject 1</label><br/>
+                <input type="text" id="1-grade" value="" placeholder="GRADE">
+                 <input type="number" id="1-credit" value="" placeholder="CREDIT">
+                <span id="1"></span>
+            </div>
+            <div>
+                <label>Subject 2</label><br/>
+                <input type="text" id="2-grade" value="" placeholder="GRADE">
+                 <input type="number" id="2-credit" value="" placeholder="CREDIT">
+                <span id="2"></span>
+            </div>
+            <div>
+                <label>Subject 3</label><br/>
+                <input type="text" id="3-grade" value="" placeholder="GRADE">
+                 <input type="number" id="3-credit" value="" placeholder="CREDIT">
+                <span id="3"></span>
+            </div>
+            
+            <div>
+                <label>Subject 4</label><br/>
+                <input type="text" id="4-grade" value="" placeholder="GRADE">
+                 <input type="number" id="4-credit" value="" placeholder="CREDIT">
+                <span id="4"></span>
+            </div>
+
+            <div>
+                <label>Subject 5</label><br/>
+                <input type="text" id="5-grade" value="" placeholder="GRADE">
+                 <input type="number" id="5-credit" value="" placeholder="CREDIT">
+                <span id="5"></span>
+            </div>
+
+            <div>
+                <label>Subject 6</label><br/>
+                <input type="text" id="6-grade" value="" placeholder="GRADE">
+                 <input type="number" id="6-credit" value="" placeholder="CREDIT">
+                <span id="6"></span>
+            </div>
+
+            <div>
+                <label>Subject 7</label><br/>
+                <input type="text" id="7-grade" value="" placeholder="GRADE">
+                 <input type="number" id="7-credit" value="" placeholder="CREDIT">
+                <span id="7"></span>
+            </div>
+
+            <button type="submit" onclick="GPA()">Submit</button>
+
+
+
+        </form>
+
+
+
+
+
+
+            
+        <h1 id="gpaa"></h1>
+        <script>
+
+            function gradenum(x){
+                var point
+                switch(x){
+                    case 'S': 
+                    point=10;
+                    break;
+                    case 'A': 
+                    point=9;
+                    break;
+                    case 'B': 
+                    point=8;
+                    break;
+                    case 'C': 
+                    point=7;
+                    break;
+                    case 'D': 
+                    point=6;
+                    break;
+                    case 'E': 
+                    point=5;
+                    break;
+                    case 'N': 
+                    point=0;
+                    break;
+                    default:
+                        point=0;
+
+                }
+                return point
+            }
+
+
+    function GPA()
+    {
+        var point1 = gradenum(document.getElementById("1-grade").value);
+
+ var cred1 = Number(document.getElementById("1-credit").value);
+
+ var point2 = gradenum(document.getElementById("2-grade").value);
+ var cred2 = Number(document.getElementById("2-credit").value);
+
+ var point3 = gradenum(document.getElementById("3-grade").value);
+ var cred3 = Number(document.getElementById("3-credit").value);
+
+ var point4 = gradenum(document.getElementById("4-grade").value);
+ var cred4 = Number(document.getElementById("4-credit").value);
+
+ var point5 = gradenum(document.getElementById("5-grade").value);
+ var cred5 = Number(document.getElementById("5-credit").value);
+
+ var point6 = gradenum(document.getElementById("6-grade").value);
+ var cred6 = Number(document.getElementById("6-credit").value);
+
+ var point7 = gradenum(document.getElementById("7-grade").value);
+ var cred7 = Number(document.getElementById("7-credit").value);
+//console.log(document.getElementById("6-grade").value+" "+point6)
+ console.log("1: "+point1+" "+cred1)
+ console.log("2: "+point2+" "+cred2)
+ console.log("3: "+point3+" "+cred3)
+ console.log("4: "+point4+" "+cred4)
+ console.log("5: "+point5+" "+cred5)
+ console.log("6: "+point6+" "+cred6)
+ console.log("7: "+point7+" "+cred7)
+
+
+ var totalcred = (cred1+cred2+cred3
+            +cred4+cred5+cred6+cred7
+            );
+
+var sum_gpa = ((point1*cred1)+(point2*cred2)+(point3*cred3)+(point4*cred4)+
+            (point5*cred5)+(point6*cred6)+(point7*cred7));
+
+var gpa = sum_gpa/totalcred;
+
+
+            console.log(totalcred);
+document.getElementById("gpaa").innerHTML = gpa.toFixed(2);
+
+    }
+
+
+        </script>
+    </body>
+</html>
